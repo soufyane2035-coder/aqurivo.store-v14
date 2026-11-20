@@ -1,0 +1,211 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.inlineStack {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.thumbnailStack {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.loadingStatus {
+  width: 100%;
+}
+
+.block,
+.skeletonMedia,
+.skeletonLineShort,
+.skeletonTitle,
+.skeletonLine,
+.skeletonButton,
+.articleFooter {
+  background-color: var(--color-bg-muted);
+  background-image: linear-gradient(
+    105deg,
+    var(--color-bg-muted) 20%,
+    var(--color-accent-subtle) 50%,
+    var(--color-bg-muted) 80%
+  );
+  background-size: 220% 100%;
+  animation: skeletonShimmer 1.45s ease-in-out infinite;
+}
+
+.block {
+  border-radius: var(--radius-xs);
+}
+
+.text {
+  height: 16px;
+  width: 100%;
+}
+
+.title {
+  height: 28px;
+  width: min(65%, 420px);
+}
+
+.media {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.pill {
+  width: 92px;
+  height: 38px;
+  border-radius: 999px;
+}
+
+.thumbnail {
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.skeletonCard {
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-hairline);
+  border-radius: var(--radius-md);
+}
+
+.skeletonMedia {
+  height: 148px;
+  border-block-end: 1px solid var(--color-border-hairline);
+}
+
+.skeletonBody {
+  min-height: 150px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeletonLineShort {
+  height: 12px;
+  width: 40%;
+  border-radius: var(--radius-xs);
+}
+
+.skeletonTitle {
+  height: 16px;
+  width: 86%;
+  border-radius: var(--radius-xs);
+}
+
+.skeletonLine {
+  height: 12px;
+  width: 100%;
+  border-radius: var(--radius-xs);
+}
+
+.skeletonButton {
+  height: 36px;
+  width: 100%;
+  margin-block-start: auto;
+  border-radius: var(--radius-sm);
+}
+
+.articleGrid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-6);
+}
+
+.articleBody {
+  min-height: 228px;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.articleBody .skeletonTitle {
+  height: 22px;
+  width: 92%;
+}
+
+.articleBody .skeletonLine {
+  height: 14px;
+}
+
+.articleLineLast {
+  width: 72%;
+}
+
+.articleFooter {
+  height: 1px;
+  width: 100%;
+  margin-block-start: auto;
+}
+
+@media (min-width: 640px) {
+  .cardGrid {
+    gap: var(--space-6);
+  }
+
+  .skeletonMedia {
+    height: 185px;
+  }
+
+  .skeletonBody {
+    min-height: 158px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 680px) {
+  .cardGrid:not(.articleGrid) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .cardGrid:not(.articleGrid) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1160px) {
+  .cardGrid:not(.articleGrid) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@keyframes skeletonShimmer {
+  from {
+    background-position: 110% 0;
+  }
+  to {
+    background-position: -110% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block,
+  .skeletonMedia,
+  .skeletonLineShort,
+  .skeletonTitle,
+  .skeletonLine,
+  .skeletonButton,
+  .articleFooter {
+    animation: none;
+  }
+}

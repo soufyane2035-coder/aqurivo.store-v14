@@ -1,0 +1,47 @@
+# Dependencies & Build Artifacts
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# Local Tooling & IDE Workspaces
+.aistudio/
+.aqurivo-mcp/
+graphify-out/
+.DS_Store
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+/firebase-admin-key.json
+*service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+firebase-debug.log
+
+# Runtime data mirror: may contain user profiles, contact messages, reports, and analytics.
+# Keep the directory marker/docs, but never commit its contents.
+/server/data/*
+!/server/data/.gitkeep
+!/server/data/README.md
+
+# Local Runtime Data, Databases, Fallbacks, Backups & Logs
+*.log
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.bak
+*.bak*
+*-bak
+.*.bak
+.*-data.json
+*.db.json
+/tmp/*

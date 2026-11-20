@@ -1,0 +1,8 @@
+{
+  "name": "AQURIVO",
+  "description": "AQURIVO — منصة ثنائية اللغة (العربية والإنجليزية) لاختيار المنتجات الموثوقة وأدلة الشراء والأدوات المالية والتقنية التفاعلية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
