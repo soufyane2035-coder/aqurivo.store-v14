@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test",
+    "test": "tsx --test tests/*.test.ts",
     "mcp": "node --conditions=react-server --import tsx mcp/server.ts",
     "migrate:firestore": "tsx scripts/migrate-firestore-to-turso.ts",
     "clean": "node -e \"require('node:fs').rmSync('.next', { recursive: true, force: true })\""
